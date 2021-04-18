@@ -120,7 +120,7 @@ I toke these notes while I was studying go from [Building web applications with 
     }
     ```
 
-46. Types defined by `struct` can have their methods, `func (someName RecieverType) funcName(params) (resutls)` is the way to define the method for some `ReceiverType` struct.
+46. Types defined by `struct` can have their methods, `func (someName RecieverType) funcName(params) (returns) {}` is the way to define the method for some `ReceiverType` struct.
 
 47. Receiver can be other then only `struct` type, `type typeName typeLiteral`. Customized types are similar to C
 
@@ -131,4 +131,35 @@ I toke these notes while I was studying go from [Building web applications with 
     ```
 
 48. If the name of methods are the same and their receivers are different then they are not same.
+
+49. Some `struct A` can be field of another `struct B` and all the methods from `struct A` will be carried to `struct B`  those methods can be overwritten as well.
+
+50. Interface is a set of methods that we use to define a set of actions. Interface can be implemented by any type and also one type can implement many interfaces simultaneously. `type InterfaceName interface { someMethod(params) returns }`. 
+
+51. `value, ok := element.(T)` is they way we check if the variable is the type that we expect, where value is the value of variable and `ok` is boolean which will show the result(true if element is type T or false), element is the interface variable and T is the assertion type, this is called `comma-ok` pattern. `value := element(type)` can be used in the switch without comma pattern.
+
+52. Goroutines are more lightweight, efficient and more convenient than system threads. goroutine is a function at the underlying level. goroutine runs on the thread manager at runtime in go.
+
+53. On `goroutine` uses 4~5 KB of memory, so thousands of `goroutines` can be ran on a single computer.
+
+54.   
+
+55.  
+
+56. `c1 := make(chan int)` is the way to create a new channel c1. `<-` is used to send/receive data.
+
+    ```go
+    c1 <- var1 // send var1 to channel c1
+    var1 := <-c1 // recieve data from channel c1
+    ```
+
+57. sending/receiving data in channels blocks(goroutine waits for the channel to receive the data) by default.
+
+58. we can use `range` and `close` functions on buffer channels as in `slice, map`.
+
+59. 
+
+
+
+
 
